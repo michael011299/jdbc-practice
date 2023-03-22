@@ -66,10 +66,9 @@ public class PetDAO implements Closeable {
 		return 0;
 	}
 
-	public int delete(String name, int age, String breed) {
-		try (PreparedStatement stmnt = conn.prepareStatement("UPDATE pets_table SET age = ? WHERE name = ?");) {
-			stmnt.setInt(1, age);
-			stmnt.setString(2, name);
+	public int delete(String name) {
+		try (PreparedStatement stmnt = conn.prepareStatement("DELETE FROM pets_table WHERE name = ?");) {
+			stmnt.setString(1, name);
 
 			return stmnt.executeUpdate();
 		} catch (SQLException e) {
