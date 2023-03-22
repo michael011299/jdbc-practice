@@ -7,6 +7,8 @@ public class driver {
 			System.out.println(dao.read());
 			System.out.println(dao.update(15, "clifford"));
 			System.out.println(dao.read());
+			System.out.println(dao.delete("clifford"));
+			System.out.println(dao.read());
 
 		} catch (Exception e) {
 			e.printStackTrace();
